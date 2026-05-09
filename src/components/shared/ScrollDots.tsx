@@ -42,7 +42,7 @@ export function ScrollDots() {
   return (
     <nav
       aria-label="Navigation par sections"
-      className="fixed right-4 md:right-6 top-1/2 -translate-y-1/2 z-40 flex flex-col gap-3.5"
+      className="fixed right-4 md:right-6 top-1/2 -translate-y-1/2 z-40 flex flex-col items-end gap-3.5"
     >
       {sections.map(({ id, label }) => (
         <button
@@ -61,14 +61,16 @@ export function ScrollDots() {
           >
             {label}
           </span>
-          <span
-            className={cn(
-              "block rounded-full transition-all duration-300",
-              active === id
-                ? "w-2.5 h-2.5 bg-blue-500"
-                : "w-1.5 h-1.5 bg-zinc-600 group-hover:bg-zinc-400"
-            )}
-          />
+          <span className="flex items-center justify-center w-3 h-3">
+            <span
+              className={cn(
+                "block rounded-full transition-all duration-300",
+                active === id
+                  ? "w-2.5 h-2.5 bg-blue-500"
+                  : "w-1.5 h-1.5 bg-zinc-600 group-hover:bg-zinc-400"
+              )}
+            />
+          </span>
         </button>
       ))}
     </nav>
